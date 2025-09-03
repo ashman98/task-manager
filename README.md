@@ -1,61 +1,112 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Task Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A sleek, modern, and responsive Task Manager web application built with Laravel. Organize your tasks effortlessly with an intuitive drag-and-drop interface.
 
-## About Laravel
+## ✨ Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Drag & Drop Interface:** Intuitively organize your tasks between columns (To-Do, In Progress, Done) using the HTML5 Drag and Drop API.
+- **Responsive Design:** Fully functional on desktop, tablet, and mobile devices thanks to Tailwind CSS.
+- **Dynamic UI:** Enhanced user experience with Vite.js for fast asset compilation and Blade templates for seamless server-side rendering.
+- **Robust Validation:** Secure and reliable form handling with built-in Laravel form validation.
+- **Modern Icons:** Clean and recognizable icons provided by Font Awesome.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend:** Laravel 12, PHP 8.2+
+- **Database:** MySQL 8.0+
+- **Frontend:** Laravel Blade Templates
+- **Bundler & HMR:** Vite.js
+- **Styling:** Tailwind CSS (via CDN)
+- **Icons:** Font Awesome (via CDN)
+- **Core Feature:** HTML5 Drag and Drop API
 
-## Learning Laravel
+## 🚀 Installation & Setup
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Follow these steps to set up the project locally on your machine.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
+    ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2.  **Install PHP Dependencies**
+    ```bash
+    composer install
+    ```
 
-## Laravel Sponsors
+3.  **Install NPM Dependencies**
+    ```bash
+    npm install
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+4.  **Environment Setup**
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+    Edit the `.env` file with your database credentials:
+    ```env
+    DB_DATABASE=your_database_name
+    DB_USERNAME=your_mysql_username
+    DB_PASSWORD=your_mysql_password
+    ```
 
-### Premium Partners
+5.  **Database Migration**
+    ```bash
+    php artisan migrate
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+6.  **Build the Assets (for development)**
+    ```bash
+    npm run dev
+    ```
+    *For production, use `npm run build`.*
 
-## Contributing
+7.  **Start the Development Server**
+    ```bash
+    php artisan serve
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+8.  **Access the Application**
+    Open your browser and go to `http://localhost:8000`.
 
-## Code of Conduct
+## 📖 Usage
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1.  **Viewing Tasks:** Tasks are displayed in a Kanban-style board with columns for different statuses.
+2.  **Adding a Task:** Click the "Add New Task" button or similar, fill out the form, and submit.
+3.  **Editing a Task:** Click on a task to edit its details.
+4.  **Moving a Task:** Simply click and drag a task card from one column to another to update its status.
+5.  **Deleting a Task:** Use the delete button on a task card to remove it.
 
-## Security Vulnerabilities
+## 🧪 Running Tests
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+To run the Laravel PHPUnit tests, use the following command:
 
-## License
+```bash
+php artisan test
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+task-manager-app/
+├app/
+    ├── Http/
+    │   ├── Controllers/     # Application controllers
+    │   ├── Requests/        # Form Request validation classes
+    │   │   ├── Project/     # Project-specific requests
+    │   │   └── Task/        # Task-specific requests
+    │   └── Interfaces/      # Repository interfaces
+    │       ├── Project/
+    │       └── Task/
+    ├── Models/
+    │   ├── Base/            # BaseModel for shared logic
+    │   ├── Project.php      # Project Eloquent model
+    │   └── Task.php         # Task Eloquent model
+    ├── Providers/           # Service providers (e.g., Repository binding)
+    ├── Repositories/
+    │   ├── Base/            # BaseRepository with common CRUD methods
+    │   ├── Project/         # Project-specific repository
+    │   └── Task/            # Task-specific repository
+    └── Services/            # Business logic layer
+├── routes/
+│   └── web.php          # Web routes definitions
+├── tests/               # Feature and Unit tests
+└── ...
